@@ -1,0 +1,22 @@
+<html>
+    <head>
+      <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+    </head>
+    <body onload="randomQuotes()">
+        <div id="box">
+          <p id="quote"><i class="fas fa-quote-left"></i><span id="actualQuote"></span></p>
+          <p id="byline"></p>
+          <p id="cat" hidden></p>
+
+          <div id="icons">
+          <a id="twitter" onclick="tweetItOut()" href="#"><i class="fab fa-2x fa-twitter-square"></i></a>
+
+            <button onclick="randomQuotes()" id="newQuote" href="#">New Quote</button>
+          </div>
+
+        </div>
+        <footer id="footer">
+          Made by <b>Doaa Mahely</b>
+        </footer>
+      </body>
+</html>

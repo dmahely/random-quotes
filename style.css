@@ -1,0 +1,58 @@
+/* https://fonts.googleapis.com/css?family=IBM+Plex+Serif */
+#box {
+  background-color: white;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  border-radius: 20px;
+  overflow: auto;
+}
+#quote {
+  padding-top: 30px;
+  text-align: center;
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 35px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.fa-quote-left {
+  margin-right: 15px;
+}
+#actualQuote {
+  text-align: center;
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 35px;
+}
+#byline {
+  text-align: right;
+  margin-right: 25px;
+  font-size: 24px;
+}
+#twitter {
+  margin-bottom: 15px;
+  float: left;
+}
+#newQuote {
+  color: white;
+  font-family: 'IBM Plex Serif', serif;
+  border: none;
+  height: 30px;
+  font-size: 14px;
+  float: right;
+  margin-bottom: 15px;
+}
+footer {
+  color: white;
+  font-family: 'IBM Plex Serif', serif;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+#icons {
+  margin: auto;
+  width: 50%;
+  display: block;
+}
