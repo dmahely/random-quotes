@@ -16,13 +16,13 @@ function random_bg_color() {
 
 function randomQuotes() {
   $.ajax({
-    url: 'https://talaikis.com/api/quotes/random/',
+    url: 'http://quotesondesign.com/wp-json/posts',
     success: function(result) {
-      $("#actualQuote").html(JSON.stringify(result.quote));
-      $("#byline").html("by " + JSON.stringify(result.author).replace(/"/g,""));
+      $("#actualQuote").html(JSON.stringify(result[0].content));
       console.log("HTML of ACTUAL QUOTES IS " + $("#actualQuote").html());
+      $("#byline").html("by " + JSON.stringify(result[0].title).replace(/"/g,""));
       // console.log("HTML of ACTUAL QUOTES IS " + String($("#actualQuote").html()));
-      $("#cat").html(JSON.stringify(result.cat).replace(/"/g,""));
+      // $("#cat").html(JSON.stringify(result.cat).replace(/"/g,""));
       // console.log(JSON.stringify(result.cat));
       random_bg_color();
 
