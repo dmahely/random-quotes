@@ -16,23 +16,18 @@ function random_bg_color() {
 // generates a random quote
 function randomQuotes() {
   $.ajax({
-    url: 'http://quotesondesign.com/wp-json/posts',
+    url: 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
     success: function(result) {
-      $("#actualQuote").html(JSON.stringify(result[0].content).replace(/\<.\>|\n|\<\/.\>/gi, ''));
+      $("#actualQuote").html('"' + JSON.stringify(result[0].content).replace(/\<.\>|\\n.|\s\s+|"|\<\/.\>/gi, '') + '"');
       console.log("HTML of ACTUAL QUOTES IS " + $("#actualQuote").html());
-      $("#byline").html("by " + JSON.stringify(result[0].title).replace(/"/g,""));
-      // console.log("HTML of ACTUAL QUOTES IS " + String($("#actualQuote").html()));
-      // $("#cat").html(JSON.stringify(result.cat).replace(/"/g,""));
-      // console.log(JSON.stringify(result.cat));
+      $("#byline").html("by " + JSON.stringify(result[0].title).replace(/"/g, ""));
       random_bg_color();
 
       $("#twitter").click(function tweetItOut(){
-        var quote = $("#actualQuote").html();
-        var author = $("#byline").html();
-        var hashtag = $("#cat").html();
-        // console.log("Hashtag: " + hashtag);
+        let quote = $("#actualQuote").html();
+        let author = $("#byline").html();
         var url = "https://twitter.com/intent/tweet";
-        window.open(url + "?text=" + quote + "%20" + author + ";hashtags=" + hashtag);
+        window.open(url + "?text=" + quote + "%20" + author);
       });
-}});
+}, cache: false});
 }
