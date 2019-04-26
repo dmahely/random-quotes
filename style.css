@@ -11,7 +11,6 @@
 #quote {
   padding-top: 30px;
   text-align: center;
-  font-family: 'IBM Plex Serif', serif;
   font-size: 35px;
   margin-left: 25px;
   margin-right: 25px;
@@ -21,7 +20,6 @@
 }
 #actualQuote {
   text-align: center;
-  font-family: 'IBM Plex Serif', serif;
   font-size: 35px;
 }
 #byline {
@@ -35,7 +33,7 @@
 }
 #newQuote {
   color: white;
-  font-family: 'IBM Plex Serif', serif;
+  border-radius: 5px;
   border: none;
   height: 30px;
   font-size: 14px;
@@ -44,7 +42,6 @@
 }
 footer {
   color: white;
-  font-family: 'IBM Plex Serif', serif;
   text-align: center;
   font-size: 16px;
   margin-top: 40px;

@@ -21,7 +21,6 @@ function randomQuotes() {
     data: "method=getQuote&format=jsonp&lang=en&jsonp=?",
     success: function(result) {
       let quote = '"' + JSON.stringify(result.quoteText).replace(/\<.\>|\\n.|\s\s+|"|\<\/.\>/gi, '') + '"';
-      // console.log("Quote: " + quote);
       let author = JSON.stringify(result.quoteAuthor).replace(/"/g, "");
       console.log("Author: " + author);
       if(author === ' ' || author === '')
