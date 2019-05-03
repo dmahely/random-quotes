@@ -15,19 +15,22 @@ function random_bg_color() {
 
 // generates a random quote
 function randomQuotes() {
-  $.ajax({
-    url: "https://api.forismatic.com/api/1.0/?",
-    dataType: "jsonp",
-    data: "method=getQuote&format=jsonp&lang=en&jsonp=?",
-    success: function(result) {
-      let quote = '"' + JSON.stringify(result.quoteText).replace(/\<.\>|\\n.|\s\s+|"|\<\/.\>/gi, '') + '"';
-      let author = JSON.stringify(result.quoteAuthor).replace(/"/g, "");
-      console.log("Author: " + author);
-      if(author === ' ' || author === '')
-        author = 'Unknown';
-      $("#actualQuote").html(quote);
-      $("#byline").html("— " + author);
-      random_bg_color();
-      $("#twitter").attr("href", "https://twitter.com/intent/tweet" + "?text=" + quote + "%20" + author);
-  }, cache: false});
+  $("#box").fadeOut().fadeIn();
+  setTimeout(() => {
+    $.ajax({
+      url: "https://api.forismatic.com/api/1.0/?",
+      dataType: "jsonp",
+      data: "method=getQuote&format=jsonp&lang=en&jsonp=?",
+      success: function(result) {
+        let quote = '"' + JSON.stringify(result.quoteText).replace(/\<.\>|\\n.|\s\s+|"|\<\/.\>/gi, '') + '"';
+        let author = JSON.stringify(result.quoteAuthor).replace(/"/g, "");
+        console.log("Author: " + author);
+        if(author === ' ' || author === '')
+          author = 'Unknown';
+        $("#actualQuote").html(quote);
+        $("#byline").html("— " + author);
+        random_bg_color();
+        $("#twitter").attr("href", "https://twitter.com/intent/tweet" + "?text=" + quote + "%20" + author);
+    }, cache: false});
+  }, 250);
 }
